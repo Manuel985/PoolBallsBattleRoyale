@@ -4,7 +4,7 @@ public class CheckMouseInput : MonoBehaviour
 {
     [SerializeField] private Animator stecca_animator;
     [SerializeField] private Transform focal_point;
-    private float velocita_rotazione = 400;
+    private const float velocita_rotazione = 400;
 
     void Update()
     {

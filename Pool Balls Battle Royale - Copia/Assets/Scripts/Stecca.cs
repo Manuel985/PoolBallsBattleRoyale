@@ -4,7 +4,7 @@ public class Stecca : MonoBehaviour
 {
     private Animator stecca_animator;
     private Transform stecca;
-    private float forza_colpo = 7;
+    private float forza_colpo = 8;
 
     void Awake()
     {
