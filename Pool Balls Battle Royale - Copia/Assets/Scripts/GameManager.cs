@@ -48,5 +48,4 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         safe_zone.SetActive(false);
     }
-
 }
