@@ -3,7 +3,10 @@ guid: e6b51df664d53ca439ba70501cc4f805
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - focal_point: {instanceID: 0}
+  - stecca_animator: {instanceID: 0}
+  - indicatore_powerup_prefab: {fileID: 7128311103870500594, guid: 821768b192b3ea044a6a14f78dfdaaf7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

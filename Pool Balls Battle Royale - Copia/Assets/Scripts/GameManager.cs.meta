@@ -3,7 +3,10 @@ guid: 38c3e05060d04764fa57ddb2d1ebd42b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - powerup_prefab: {fileID: 7857677312546712388, guid: 383ed30d5aa6d50419bb8cde91f00a5c, type: 3}
+  - safe_zone: {instanceID: 0}
+  - palla_bianca: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

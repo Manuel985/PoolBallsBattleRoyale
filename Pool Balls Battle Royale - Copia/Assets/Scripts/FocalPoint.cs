@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class FocalPoint : MonoBehaviour
 {
-    [SerializeField] private Transform soggetto;
+    private Transform soggetto;
     private Transform focal_point;
     
     private void Awake()
     {
         focal_point = transform;
+        soggetto = GameObject.Find(name.Substring(12)).transform;
     }
 
     void Update()

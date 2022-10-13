@@ -3,7 +3,9 @@ guid: b8f3f400e84f5b646bcb3762566ab764
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - indicatore_powerup_prefab: {fileID: 7128311103870500594, guid: 821768b192b3ea044a6a14f78dfdaaf7, type: 3}
+  - focal_point: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
