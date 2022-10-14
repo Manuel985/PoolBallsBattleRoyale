@@ -25,14 +25,10 @@ public class MovimentoGiocatore : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movimento(focal_point.forward, focal_point.right, Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
-    }
-
-    private void Movimento(Vector3 direzione_verticale, Vector3 direzione_orizzontale, float input_verticale, float input_orizzontale)
-    {
-        Vector3 avanti_indietro = direzione_verticale * input_verticale;
-        Vector3 destra_sinistra = direzione_orizzontale * input_orizzontale;
-        giocatore_corpo_rigido.AddForce((avanti_indietro + destra_sinistra).normalized * velocita_movimento, ForceMode.Force);
+        Vector3 avanti_indietro = focal_point.forward * Input.GetAxis("Vertical");
+        Vector3 destra_sinistra = focal_point.right * Input.GetAxis("Horizontal");
+        Vector3 risultante = avanti_indietro + destra_sinistra;
+        giocatore_corpo_rigido.AddForce((risultante).normalized * velocita_movimento, ForceMode.Force);
     }
 
     private void OnTriggerEnter(Collider other)
