@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject powerup_prefab;
+    public static float numero_palline = 15; 
     public static float velocita = 5;
     public static float forza = 7;
     public static float forza_potenziata = 20;
