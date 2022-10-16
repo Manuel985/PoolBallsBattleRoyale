@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae24ed6795ef1448c7a35174eed755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forza_colpo: 0
 --- !u!95 &2051195481
 Animator:
   serializedVersion: 4

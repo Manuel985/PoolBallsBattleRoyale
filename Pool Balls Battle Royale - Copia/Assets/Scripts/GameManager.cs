@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource suono_powerup;
     [SerializeField] private GameObject powerup_prefab;
     public static float numero_palline = 15; 
     public static float velocita = 5;
@@ -25,5 +26,6 @@ public class GameManager : MonoBehaviour
     private void NuovoPowerup()
     {
         Instantiate(powerup_prefab, PuntoCasuale(), powerup_prefab.transform.rotation);
+        suono_powerup.Play();
     }
 }

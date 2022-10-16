@@ -3,6 +3,9 @@ using System.Collections;
 
 public class MovimentoGiocatore : MonoBehaviour
 {
+    [SerializeField] private AudioSource fine_superpotere;
+    [SerializeField] private AudioSource inizio_superpotere;
+    [SerializeField] private AudioSource suono_steccata;
     private GameObject indicatore_powerup;
     private Animator stecca_animator;
     private Stecca stecca;
@@ -36,6 +39,7 @@ public class MovimentoGiocatore : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             stecca_animator.Play("Colpo");
+            suono_steccata.Play();
         }
     }
 
@@ -51,8 +55,9 @@ public class MovimentoGiocatore : MonoBehaviour
     {
         if (other.CompareTag("Powerup") && !posseggo_superpotere)
         {
-            posseggo_superpotere = true;
             Destroy(other.gameObject);
+            posseggo_superpotere = true;
+            inizio_superpotere.Play();
             indicatore_powerup.SetActive(true);
             stecca.forza_colpo = GameManager.forza_potenziata;
             StartCoroutine(PowerupCountDown());
@@ -65,5 +70,6 @@ public class MovimentoGiocatore : MonoBehaviour
         stecca.forza_colpo = GameManager.forza;
         indicatore_powerup.SetActive(false);
         posseggo_superpotere = false;
+        fine_superpotere.Play();
     }
 }

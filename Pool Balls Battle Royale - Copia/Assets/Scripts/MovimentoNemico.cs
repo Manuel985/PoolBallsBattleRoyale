@@ -73,8 +73,8 @@ public class MovimentoNemico : MonoBehaviour
     {
         if (other.CompareTag("Powerup") && !posseggo_superpotere)
         {
-            posseggo_superpotere = true;
             Destroy(other.gameObject);
+            posseggo_superpotere = true;
             indicatore_powerup.SetActive(true);
             stecca.forza_colpo = GameManager.forza_potenziata;
             StartCoroutine(PowerupCountDown());
