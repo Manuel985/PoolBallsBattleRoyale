@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class FocalPoint : MonoBehaviour
 {
-    private Transform soggetto;
-    private Transform focal_point;
+    private Transform soggetto, focal_point;
     
     private void Awake()
     {
@@ -11,7 +10,7 @@ public class FocalPoint : MonoBehaviour
         soggetto = GameObject.Find(name.Substring(12)).transform;
     }
 
-    void Update()
+    private void Update()
     {
         focal_point.position = soggetto.position;
     }

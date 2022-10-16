@@ -12,9 +12,10 @@ public class Buca : MonoBehaviour
     {
         if(other.CompareTag("Palla"))
         {
-            other.gameObject.SetActive(false);
-            GameObject.Find("Focal Point " + other.name).SetActive(false);
+            Destroy(other);
             nebbia.Play(true);
+            Destroy(other.gameObject, 5);
+            Destroy(GameObject.Find("Focal Point " + other.name), 5);
         }
     }
 }

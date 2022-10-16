@@ -4,12 +4,17 @@ public class Stecca : MonoBehaviour
 {
     private Animator stecca_animator;
     private Transform stecca;
-    private float forza_colpo = 8;
+    public float forza_colpo;
 
-    void Awake()
+    private void Awake()
     {
         stecca_animator = GetComponent<Animator>();
         stecca = transform;
+    }
+
+    private void Start()
+    {
+        forza_colpo = GameManager.forza;
     }
 
     private void OnTriggerEnter(Collider other)
