@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.40996075, g: 0.39305982, b: 0.37593576, a: 1}
+  m_IndirectSpecularColor: {r: 0.3713506, g: 0.34296018, b: 0.37577808, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -817,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128311103870500594, guid: 821768b192b3ea044a6a14f78dfdaaf7, type: 3}
       propertyPath: m_Name
-      value: Indicatore Giocatore
+      value: Indicatore 8
       objectReference: {fileID: 0}
     - target: {fileID: 7128311103870500594, guid: 821768b192b3ea044a6a14f78dfdaaf7, type: 3}
       propertyPath: m_IsActive
@@ -2362,7 +2362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8519784792258392779, guid: 9adad0d5eab59a34faf05063018facdb, type: 3}
       propertyPath: m_Name
-      value: Giocatore
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8519784792258392779, guid: 9adad0d5eab59a34faf05063018facdb, type: 3}
       propertyPath: m_TagString
@@ -3006,7 +3006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6486797018553880407, guid: 79f6504f728dee545b12cdf30edd3315, type: 3}
       propertyPath: m_Name
-      value: Stecca Giocatore
+      value: Stecca 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f6504f728dee545b12cdf30edd3315, type: 3}
@@ -3464,7 +3464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1006892821784561270, guid: c17d87225e5aabb449e5d4500889acfc, type: 3}
       propertyPath: m_Name
-      value: Focal Point Giocatore
+      value: Focal Point 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17d87225e5aabb449e5d4500889acfc, type: 3}

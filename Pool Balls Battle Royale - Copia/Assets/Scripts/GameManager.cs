@@ -12,7 +12,12 @@ public class GameManager : MonoBehaviour
     private const float confine_x = 5f;
     private const float confine_z = 1.7f;
     private const float altezza = 0.025f;
-    
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     private void Start()
     {
         InvokeRepeating("NuovoPowerup", tempo_spawn_powerup, tempo_spawn_powerup);
