@@ -3,21 +3,21 @@ using System.Collections;
 
 public class MovimentoGiocatore : MonoBehaviour
 {
-    [SerializeField] private AudioSource fine_superpotere;
-    [SerializeField] private AudioSource inizio_superpotere;
-    [SerializeField] private AudioSource suono_steccata;
+    [SerializeField] private AudioSource fine_superpotere_prefab, inizio_superpotere, suono_steccata_prefab;
+    public static AudioSource fine_superpotere, suono_steccata;
     private GameObject indicatore_powerup;
     private Animator stecca_animator;
     private Stecca stecca;
-    private Transform focal_point, giocatore;
+    private Transform focal_point;
     private Rigidbody giocatore_corpo_rigido;
-    private bool posseggo_superpotere = false;
+    private bool posseggo_superpotere;
     private float velocita_movimento;
     private const float velocita_rotazione = 400;
     
     private void Awake()
     {
-        giocatore = transform;
+        fine_superpotere = fine_superpotere_prefab;
+        suono_steccata = suono_steccata_prefab;
         giocatore_corpo_rigido = GetComponent<Rigidbody>();
         focal_point = GameObject.Find("Focal Point " + name).transform;
         indicatore_powerup = GameObject.Find("Indicatore " + name);
@@ -29,8 +29,9 @@ public class MovimentoGiocatore : MonoBehaviour
 
     private void Start()
     {
+        posseggo_superpotere = false;
         velocita_movimento = GameManager.velocita;
-        giocatore.position = GameManager.PuntoCasuale();
+        transform.position = GameManager.PuntoCasuale();
     }
 
     private void Update()
@@ -64,9 +65,9 @@ public class MovimentoGiocatore : MonoBehaviour
         }
     }
 
-    IEnumerator PowerupCountDown()
+    private IEnumerator PowerupCountDown()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         stecca.forza_colpo = GameManager.forza;
         indicatore_powerup.SetActive(false);
         posseggo_superpotere = false;

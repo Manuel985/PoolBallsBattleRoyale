@@ -9,26 +9,28 @@ public class MovimentoNemico : MonoBehaviour
     private Stecca stecca;
     private Transform focal_point, nemico;
     private Rigidbody nemico_corpo_rigido;
-    private bool posseggo_superpotere = false;
-    private float velocita_movimento;
-    private const float raggio_rilevamento_avversari = 1;
-    private const float raggio_rilevamento_buche = 1;
-    private const float raggio_rilevamento_powerups = 2;
+    private bool posseggo_superpotere;
+    private float velocita_movimento, velocita_rotazione_visuale, raggio_rilevamento_avversari, raggio_rilevamento_buche, raggio_rilevamento_powerups;
 
     private void Awake()
     {
         nemico = transform;
         nemico_corpo_rigido = GetComponent<Rigidbody>();
         GameObject stecca_oggetto = GameObject.Find("Stecca " + name);
-        indicatore_powerup = GameObject.Find("Indicatore " + name);
-        indicatore_powerup.SetActive(false);
         stecca_animator = stecca_oggetto.GetComponent<Animator>();
         stecca = stecca_oggetto.GetComponent<Stecca>();
+        indicatore_powerup = GameObject.Find("Indicatore " + name);
+        indicatore_powerup.SetActive(false);
         focal_point = GameObject.Find("Focal Point " + name).transform;
     }
 
     private void Start()
     {
+        posseggo_superpotere = false;
+        raggio_rilevamento_avversari = 1;
+        velocita_rotazione_visuale = Bottone.velocita_rotazione_visuale;
+        raggio_rilevamento_buche = Bottone.raggio_rilevamento_buche;
+        raggio_rilevamento_powerups = Bottone.raggio_rilevamento_powerups;
         velocita_movimento = GameManager.velocita;
         nemico.position = GameManager.PuntoCasuale();
     }
@@ -58,7 +60,7 @@ public class MovimentoNemico : MonoBehaviour
             Transform avversario_target = avversari.ElementAt(Random.Range(0, avversari.Count()));
             vettore_spostamento = avversario_target.position - nemico.position;
             Quaternion visuale = Quaternion.LookRotation(vettore_spostamento);
-            Vector3 rotazione_visuale = Quaternion.Lerp(focal_point.rotation, visuale, Time.deltaTime).eulerAngles;
+            Vector3 rotazione_visuale = Quaternion.Lerp(focal_point.rotation, visuale, Time.deltaTime * velocita_rotazione_visuale).eulerAngles;
             focal_point.rotation = Quaternion.Euler(0f, rotazione_visuale.y, 0f);
             stecca_animator.Play("Colpo");
         }
@@ -77,13 +79,15 @@ public class MovimentoNemico : MonoBehaviour
             posseggo_superpotere = true;
             indicatore_powerup.SetActive(true);
             stecca.forza_colpo = GameManager.forza_potenziata;
+            raggio_rilevamento_avversari = Bottone.raggio_rilevamento_avversari;
             StartCoroutine(PowerupCountDown());
         }
     }
 
     private IEnumerator PowerupCountDown()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
+        raggio_rilevamento_avversari = 1;
         stecca.forza_colpo = GameManager.forza;
         indicatore_powerup.SetActive(false);
         posseggo_superpotere = false;
