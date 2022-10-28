@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static float velocita = 5;
     public static float forza = 7;
     public static float forza_potenziata = 20;
-    private const float tempo_spawn_powerup = 10;
+    private const float tempo_spawn_powerup = 13;
     private const float confine_x = 5f;
     private const float confine_z = 1.7f;
     private const float altezza = 0.025f;

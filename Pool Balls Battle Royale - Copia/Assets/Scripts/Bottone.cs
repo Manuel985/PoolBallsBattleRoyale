@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class Bottone : MonoBehaviour
 {
+    [SerializeField] private GameObject menu_pausa;
     [SerializeField] private AudioSource premo, sopra;
-    [SerializeField] private GameObject barra, bottone_beginner, bottone_intermediate, bottone_proplayer;
+    [SerializeField] private GameObject barra, bottone_beginner, bottone_intermediate, bottone_proplayer, bottone_pausa;
     public static float velocita_rotazione_visuale, raggio_rilevamento_buche, raggio_rilevamento_powerups, raggio_rilevamento_avversari;
 
     public void BarraCaricamento()
@@ -65,5 +66,21 @@ public class Bottone : MonoBehaviour
         raggio_rilevamento_buche = 1;
         raggio_rilevamento_powerups = 3;
         raggio_rilevamento_avversari = 4;
+    }
+
+    public void AproMenuPausa()
+    {
+        bottone_pausa.SetActive(false);
+        Time.timeScale = 0;
+        menu_pausa.SetActive(true);
+        MovimentoGiocatore.suono_steccata.volume = 0;
+    }
+
+    public void ChiudoMenuPausa()
+    {
+        menu_pausa.SetActive(false);
+        Time.timeScale = 1;
+        bottone_pausa.SetActive(true);
+        MovimentoGiocatore.suono_steccata.volume = 1;
     }
 }

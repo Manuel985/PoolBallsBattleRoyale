@@ -12,7 +12,7 @@ public class MovimentoGiocatore : MonoBehaviour
     private Rigidbody giocatore_corpo_rigido;
     private bool posseggo_superpotere;
     private float velocita_movimento;
-    private const float velocita_rotazione = 400;
+    public static float velocita_rotazione = 200;
     
     private void Awake()
     {
