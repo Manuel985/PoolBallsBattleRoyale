@@ -24,6 +24,7 @@ public class Buca : MonoBehaviour
             caduta.Play();
             numero_vivi.text = "" + GameManager.numero_palline;
             etichetta_eliminati.SetText(etichetta_eliminati.text + "\n" + "- Player " + nome_player + " Eliminated");
+            StartCoroutine(CancelloEtichetta());
             if(nome_player != "8")
             {
                 Destroy(other.gameObject, 0.3f);
@@ -40,6 +41,12 @@ public class Buca : MonoBehaviour
                 StartCoroutine(GameOver());
             }
         }
+    }
+
+    private IEnumerator CancelloEtichetta()
+    {
+        yield return new WaitForSeconds(3);
+        etichetta_eliminati.text = "";
     }
 
     private IEnumerator GameOver()

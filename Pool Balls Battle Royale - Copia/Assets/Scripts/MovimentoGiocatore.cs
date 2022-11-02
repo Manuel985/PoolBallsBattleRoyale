@@ -4,6 +4,7 @@ using System.Collections;
 public class MovimentoGiocatore : MonoBehaviour
 {
     [SerializeField] private AudioSource fine_superpotere_prefab, inizio_superpotere, suono_steccata_prefab;
+    //variabili a cui deve accedere l'oggetto buca
     public static AudioSource fine_superpotere, suono_steccata;
     private GameObject indicatore_powerup;
     private Animator stecca_animator;
@@ -12,7 +13,8 @@ public class MovimentoGiocatore : MonoBehaviour
     private Rigidbody giocatore_corpo_rigido;
     private bool posseggo_superpotere;
     private float velocita_movimento;
-    public static float velocita_rotazione = 200;
+    //variabile a cui deve accedere l'oggetto che cambia la sensibilità del mouse
+    public static float velocita_rotazione;
     
     private void Awake()
     {

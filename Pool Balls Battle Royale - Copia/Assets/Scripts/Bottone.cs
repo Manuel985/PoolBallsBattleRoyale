@@ -7,6 +7,7 @@ public class Bottone : MonoBehaviour
     [SerializeField] private GameObject menu_pausa;
     [SerializeField] private AudioSource premo, sopra;
     [SerializeField] private GameObject barra, bottone_beginner, bottone_intermediate, bottone_proplayer, bottone_pausa;
+    //variabili a cui devono poter accedere le bilie nemiche
     public static float velocita_rotazione_visuale, raggio_rilevamento_buche, raggio_rilevamento_powerups, raggio_rilevamento_avversari;
 
     public void BarraCaricamento()

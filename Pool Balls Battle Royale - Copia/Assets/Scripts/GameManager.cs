@@ -5,8 +5,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private AudioSource musica_prefab, suono_powerup_prefab;
     [SerializeField] private GameObject powerup_prefab;
+    //variabili a cui deve accedere l'oggetto buca
     public static AudioSource musica, suono_powerup;
     public static float numero_palline;
+    //variabili a cui devono accedere gli oggetti giocatore e nemici
     public static float velocita = 5;
     public static float forza = 7;
     public static float forza_potenziata = 20;
@@ -23,7 +25,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
         numero_palline = GameObject.FindGameObjectsWithTag("Palla").Length;
         StartCoroutine(PartenzaRitardata());
         InvokeRepeating("NuovoPowerup", tempo_spawn_powerup, tempo_spawn_powerup);

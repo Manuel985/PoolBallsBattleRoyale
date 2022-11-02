@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CambioSensibilitaMouse : MonoBehaviour
 {
-    public static Slider slider;
+    private Slider slider;
 
     private void Awake()
     {
@@ -13,6 +13,7 @@ public class CambioSensibilitaMouse : MonoBehaviour
     private void Start()
     {
         slider.value = PlayerPrefs.GetFloat("Sensibilita", slider.minValue);
+        MovimentoGiocatore.velocita_rotazione = slider.value;
     }
 
     public void CambioSensibilita()

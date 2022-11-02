@@ -4,6 +4,7 @@ public class Stecca : MonoBehaviour
 {
     private Animator stecca_animator;
     private Transform stecca;
+    //la forza può essere modificata dal superpotere
     public float forza_colpo;
 
     private void Awake()
