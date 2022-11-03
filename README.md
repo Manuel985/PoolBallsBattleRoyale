@@ -1,1 +1,1 @@
-# PoolBallsBattleRoyale
+Per eseguire il videogioco: Assets > Scenes > Start. Play.
